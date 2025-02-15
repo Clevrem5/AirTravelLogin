@@ -65,7 +65,7 @@ class _InfoPageState extends State<InfoPage> {
             InfoPageTextField(text: "+998 99 919-31-11"),
             InfoPageTextField(
               text: "Viloyatingiz",
-              icon: Icon(Icons.circle),
+              icon: "assets2/icons/combo.svg",
             ),
             Align(
               alignment: Alignment.bottomCenter,

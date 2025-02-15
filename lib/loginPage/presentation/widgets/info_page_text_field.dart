@@ -1,15 +1,16 @@
 import 'package:air_travel_app/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class InfoPageTextField extends StatelessWidget {
   const InfoPageTextField({
     super.key,
-    this.icon,
+    this.icon = "",
     required this.text,
   });
 
   final String text;
-  final Icon? icon;
+  final String icon;
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +28,21 @@ class InfoPageTextField extends StatelessWidget {
         hintText: text,
         fillColor: AppColorsTravel.textColor.withValues(alpha: 0.7),
         labelText: text,
-        suffixIcon: icon,
-       suffixIconConstraints: BoxConstraints(minHeight: 10,minWidth: 8),
+        contentPadding: EdgeInsets.all(20),
+        suffixIcon: IconButton(
+          onPressed: () {},
+          icon: SvgPicture.asset(
+            icon,
+            fit: BoxFit.cover,
+            width: 8,
+            height: 12,
+            colorFilter: ColorFilter.mode(
+              Colors.black,
+              BlendMode.srcIn,
+            ),
+          ),
+        ),
+        suffixIconConstraints: BoxConstraints(minHeight: 10, minWidth: 8),
         // suffixIcon: SizedBox(
         //   width: 20,
         //   height: 20,
